@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Probe</title>
+		<script type="text/javascript">
+			
+			function Hand() {
+				this.pos= [];
+				for (var i=0, l=15; i<l;i++){
+					this.pos.push(null);
+				}			
+			}
+
+			var handy = new Hand();
+			console.log('handy.pos',handy.pos); 		
+		</script>
+	</head>
+	<body>
+		
+		<ul><li>Player login</li> 
+			<ul><li>Creates a session</li>
+			<li>2-6 players</li></ul>
+		<li>Set up Hand properties.</li>  
+			<ul><li>Object: hand</li>
+				<li>12 positions</li>
+				<li>Object Position</li>
+					<ul><li>this.position</li>					
+					</ul>
+						<ul><li>this.value</li>					
+							<ul><li>one case of letters + spaces</li>						
+							</ul>
+						<li>this.visible</li>
+							<ul><li>default false.</li>								
+							</ul>
+						</ul>
+			</ul>
+		<li>UI to define Hand positions.</li> 
+			<li>UI Players has form to submit word.</li>  
+				<ul><li>Form has limits to letters (one case) and spaces.</li> 
+				<li>big case/lower case no matter</li>
+				<li>Hands as 12 letters individually?</li> 
+				<li>Future: grammar check</li>
+				<li>Any words are acceptable - nouns, adjectives, adverbs or any other parts of speech just as long as they are not spelled with apostrophes or hyphens, are not proper names, or are not abbreviated,</li></ul>
+		<li>Login</li>	
+			<ul><li>User</li>
+			<li>Password</li></ul>		
+		<li>Tables</li>
+			<ul><li>Users</li>
+				<ul><li>user</li>
+				<li>password</li>
+				<li>TurnOrder</li>
+				<li>word</li></ul>
+			<li>Guesses</li>
+			<ul><li>Guessee</li>
+			<li>letterGuess</li>
+			</ul>
+			
+		<li>GameVariables</li>
+			<ul><li>CurrentTurn - (user)</li></ul>
+		<li>Hands (12 records)-Each Player</li>
+			<ul><li>Letter</li>
+			<li>Position</li>
+			<li>PointValue</li>
+			<li>Reveal Status</li></ul>
+		</ul></ul>
+	players not supposed to know previous guesses.	
+			
+		<br />
+		<br />
+		card functions.<br />
+		<pre>
+"Take Your Normal Turn." 
+"Take An Additional Turn." 
+"Opponent at Left Will Expose a Card." 
+"Opponent at Right Will Expose a Card."
+"If You Have a Blank, Expose It."
+"Quintuple the Value of Your First Guess." 
+"Quadruple the Value of Your First Guess."
+"Triple the Value of Your First Guess."
+"Add ___ From Your Score."
+"Deduct ___ From Your Score." 
+			</pre>
+<br />
+<br />
+<pre>
+Deck of cards. Deck has actions.
+Perform Action.
+
+Loop for turns.
+
+Game order.
+Functions for Card options.
+Turn action.: Guess a Letter.
+See Result.
+	Reveal Words.
+Make a guess at the word.
+
+
+Simple Turn Steps:
+Pick a player
+Guess A letter.
+Reveal Phase.
+when Reveal:
+	if blank asked, and no is answer, 50 point penalty to guesser.
+	Guessed Player chooses what to reveal.
+		if no, turn is complete. skip.
+	Letter is revealed.
+	Point is added to guesser.
+	Guesser goes back to step one.
+	if final word revealed., 50 points.
+
+Next turn.
+
+cards can give you points for revealing others
+cards don't give yourself points for hurting yourself
+
+
+Anytime during the game mode: (flashing lights), different button. interrupt mode
+	any body can guess. even if you've been eliminated.
+	if guessee Unrevealed >= 5, can do this.
+	
+	Guesser selects Guessee.
+	Guesser guesses word.
+	If word correct (sum(unrevealed cards)+ 100 points to guesser)
+	else -50 points to guesser
+	if guessee missspelled word, guessee -100.
+	
+Last Player Standing (),
+	play two rounds to guess word. only lps can't guess.. 
+	if no reveal, sum(unrevealed cards)+50 points to LPS
+		If LPS Unrevealed >= 5, +50 points to LPS (100)
+	
+Two player game: each player has two words.
+
+Game play pauses to reveal result
+
+Call out misspeller.  Misspeller gets a chance to admit it.
+	</pre>
+	
+<p><a href="http://www.centralconnector.com/GAMES/probe.html">instuctions here</a></p>
+	</body>
+</html>
